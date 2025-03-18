@@ -10,7 +10,7 @@ df = pd.read_excel(excel_file_path)
 # Create figures
 
 # 1. Bar Chart: total sales by category
-sales_by_category = df.groupby('Category', as_index=False, observed=False)['Sales'].sum()
+sales_by_category = df.groupby('Category', as_index=False, observed=True)['Sales'].sum()
 fig_bar = px.bar(
     sales_by_category,
     x='Category',
@@ -20,11 +20,11 @@ fig_bar = px.bar(
 )
 
 # 2. Line Graph: monthly sales trend
-#    We need to ensure months are in correct order, so let's define a mapping:
+#    Ensure months are in the correct order:
 month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 df['Month'] = pd.Categorical(df['Month'], categories=month_order, ordered=True)
-sales_by_month = df.groupby('Month', as_index=False)['Sales'].sum()
+sales_by_month = df.groupby('Month', as_index=False, observed=True)['Sales'].sum()
 fig_line = px.line(
     sales_by_month,
     x='Month',
@@ -91,5 +91,6 @@ app.layout = html.Div(children=[
 ])
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    import os
+    port = int(os.getenv("PORT", 8050))
+    app.run(debug=False, host='0.0.0.0', port=port)
