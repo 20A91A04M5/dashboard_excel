@@ -48,7 +48,7 @@ app = dash.Dash(__name__)
 
 
 app.layout = html.Div([
-    html.H1("📊 Mobile Data Dashboard", style={'text-align': 'center', 'margin-bottom': '20px'}),
+    html.H1(" Mobile Data Dashboard", style={'text-align': 'center', 'margin-bottom': '20px'}),
 
     dcc.Graph(figure=fig_bar),
     dcc.Graph(figure=fig_line),
@@ -61,7 +61,7 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     url = "http://127.0.0.1:8050/"
-    print(f"🚀 Starting Dash app... Open: {url}")
+    print(f" Starting Dash app... Open: {url}")
 
     if os.environ.get("RENDER_ENV") != "production":
         webbrowser.open_new(url)
