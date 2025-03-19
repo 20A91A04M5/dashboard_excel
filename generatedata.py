@@ -8,13 +8,13 @@ def generate_sample_data(num_rows=1000):
     Returns a pandas DataFrame.
     """
 
-    # Possible categories and months
+  
     categories = ['Electronics', 'Clothing', 'Home Decor', 'Books', 'Sports']
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
               'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-    # Generate random data
-    np.random.seed(42)  # For reproducible random results
+    
+    np.random.seed(42) 
     data = {
         'Category': np.random.choice(categories, num_rows),
         'Month': np.random.choice(months, num_rows),
@@ -26,10 +26,10 @@ def generate_sample_data(num_rows=1000):
     return df
 
 if __name__ == "__main__":
-    # Generate the sample data
+    
     df = generate_sample_data(1000)
 
-    # Save to Excel in the 'project' subfolder
+   
     output_path = 'project/sampledata.xlsx'
     df.to_excel(output_path, index=False)
     print(f"Sample data generated and saved to {output_path}")
