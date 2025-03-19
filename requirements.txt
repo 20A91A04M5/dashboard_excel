@@ -3,3 +3,4 @@ openpyxl
 plotly
 dash
 numpy
+xlrd

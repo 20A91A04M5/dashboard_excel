@@ -1,24 +1,24 @@
-# Python bytecode and caches
+
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environment directories
+
 venv/
 ENV/
 env/
 
-# Build directories and artifacts
+
 build/
 dist/
 *.egg-info/
 
-# Jupyter Notebook checkpoints
+
 .ipynb_checkpoints/
 
-# OS generated files
+
 .DS_Store
 Thumbs.db
 
-# Excel generated data (auto-generated sample file)
+
 project/sampledata.xlsx
